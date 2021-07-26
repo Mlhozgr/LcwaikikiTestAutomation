@@ -1,0 +1,53 @@
+
+# Ana sayfanın açıldığı kontrol edilir.
+*"1" saniye bekle
+* "https://www.lcwaikiki.com/tr-TR/TR"li sayfada olduğunu kontrol et
+*"1" saniye bekle
+
+# Menüden Erkek seçeneğinin üzerinde durulur.
+* "li[id='menu_6']>a"li elementin üzerinde dur
+*"1" saniye bekle
+
+# Açılan pencereden Gömlek Seçilir
+*"a[href='/tr-TR/TR/kategori/erkek/gomlek']"css li elemente tıkla
+*"1" saniye bekle
+*"button[class='btn btn-primary btn-sm acceptcookies  ']"css li elemente tıkla
+*"1" saniye bekle
+
+# Erkek Gömlek sayfası açıldığı kontrol edilir
+*"https://www.lcwaikiki.com/tr-TR/TR/kategori/erkek/gomlek"li sayfada olduğunu kontrol et
+*"1" saniye bekle
+
+#Sırala Menüsünden “En yüksek fiyattan” seçenegi seçilir
+*"dropdownMenu1"li elemente tıkla
+*"1" saniye bekle
+*"hfl_3"li elemente tıkla
+*"1" saniye bekle
+#Seçimin “En yüksek fiyattan” olduğu kontrol edilir
+*"1" saniye bekle
+*"a[href='#']>label"in sayfada olup olmadığını kontrol et
+# ilk 3 ürün favorilere eklenir
+*"2" saniye bekle
+*"//*[@class='emi-item fav']"xpathli listeden ilk 3 ürünü favorilere ekle
+*"4" saniye bekle
+#Sag üstteki favorilerim butonuna tıklanmalı
+*"(//a[@class='header-add-to-favorite'])[1]"xpath li elemente tıkla
+*"1" saniye bekle
+#Favorilerim sayfasının açıldığı dogrulanmalı
+*"https://www.lcwaikiki.com/tr-TR/TR/favorilistem"li sayfada olduğunu kontrol et
+*"2" saniye bekle
+#Favori olarak seçilen 3 ürünün orada oldugu kontrol edilmeli
+*"//*[@id='itemCount']"xpathli eleman "3 Ürün" e eşit değilse "Ürünler favorilere eklenmedi" yazdır
+*"1" saniye bekle
+#Tümünü seç butonuna tıklanmalı
+*"selectAll"li elemente tıkla
+*"1" saniye bekle
+#Tümünün seçildigi kontrol edilmeli
+*"//*[@id='selectedItemCount']"xpathli eleman "3 Ürün Seçildi" e eşit değilse "Ürünlerin tümü seçilmedi" yazdır
+*"1" saniye bekle
+#Seçilenleri sil butonuna tıklanmalı
+*"1" saniye bekle
+*"removeSelected"li elemente tıkla
+#”Favori Ürününüz Yok” metni sayfada gözlemlenmeli
+*"2" saniye bekle
+*"p[class='text-center bold favoriteNoItemHeaderColor']"in sayfada olup olmadığını kontrol et
